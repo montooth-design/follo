@@ -1,0 +1,102 @@
+/* Shared heading and card design tokens. Change these to restyle every view. */
+:root {
+  --heading-font-family: Inter, 'Segoe UI', Arial, sans-serif;
+  --heading-font-weight: 500;
+  --heading-view-size: 36px;
+  --heading-section-size: 25px;
+  --heading-detail-size: 16px;
+  --heading-hero-size: 30px;
+  --section-card-radius: 10px;
+  --section-card-padding: 24px;
+  --verification-button-radius: 6px;
+  --verification-button-padding: 10px 16px;
+}
+
+.ui-heading.ui-heading {
+  font-family: var(--heading-font-family);
+  font-weight: var(--heading-font-weight);
+  line-height: 1.3;
+  letter-spacing: -0.7px;
+}
+.ui-heading.ui-heading--view {
+  font-size: var(--heading-view-size);
+}
+.ui-heading.ui-heading--section {
+  font-size: var(--heading-section-size);
+}
+.ui-heading.ui-heading--detail {
+  font-size: var(--heading-detail-size);
+}
+.ui-heading.ui-heading--hero {
+  font-size: var(--heading-hero-size);
+}
+.section-card.section-card {
+  border: 1px solid var(--border);
+  border-radius: var(--section-card-radius);
+  padding: var(--section-card-padding);
+  background: var(--panel);
+}
+.verification-button {
+  border-radius: var(--verification-button-radius);
+  padding: var(--verification-button-padding);
+}
+@media (max-width: 1100px) {
+  .ui-heading.ui-heading--hero {
+    font-size: 24px;
+  }
+}
+
+.verification-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+}
+.verification-badge.verified {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+}
+.verification-badge.pending,
+.verification-badge.unsaved,
+.verification-badge.testing {
+  color: #efc574;
+  border-color: #a58039;
+  background: #a580391a;
+}
+:root[data-theme='light'] .verification-badge.pending,
+:root[data-theme='light'] .verification-badge.unsaved,
+:root[data-theme='light'] .verification-badge.testing {
+  color: #795200;
+  border-color: #ac7b25;
+  background: #fff2d7;
+}
+.verification-badge.off {
+  color: var(--muted);
+  background: var(--bg);
+}
+
+.subtitle {
+  font-size: 10px;
+  color: var(--accent);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin: 0 0 35px;
+}
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 15px;
+}
+.section-heading > span:not(.verification-badge) {
+  font-size: 11px;
+  color: var(--muted);
+}

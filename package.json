@@ -1,0 +1,44 @@
+{
+  "name": "follo-workspace",
+  "version": "0.21.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "security:secrets": "node scripts/check-secrets.mjs",
+    "security:audit": "npm audit",
+    "format": "eslint . --fix && prettier --write .",
+    "format:check": "prettier --check .",
+    "dev": "npm run build:main && node scripts/dev.mjs",
+    "build:main": "node scripts/build-main.mjs",
+    "build": "npm run build:main && vite build --config apps/desktop/vite.config.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "npm run build:main && node scripts/test.mjs",
+    "smoke": "npm run build && node scripts/smoke.mjs",
+    "test:packaged": "node scripts/test-packaged.mjs",
+    "package": "npm run build && electron-builder --projectDir apps/desktop --dir",
+    "dist": "npm run build && electron-builder --projectDir apps/desktop --win nsis",
+    "check": "npm run typecheck && npm run lint && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "electron": "44.5.1",
+    "electron-builder": "^26.0.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^9.39.0",
+    "globals": "^16.0.0",
+    "prettier": "^3.9.9",
+    "typescript": "^5.9.0",
+    "typescript-eslint": "^8.0.0",
+    "vite": "^6.4.0"
+  }
+}

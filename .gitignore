@@ -147,3 +147,17 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Follo local data and packaged output
+node_modules/
+dist/
+release/
+*.log
+*.sqlite*
+.env
+.env.*
+!.env.example
+*.credential
+*.credential.tmp
+*.pem
+*.key

@@ -1,0 +1,9 @@
+{
+  "name": "@follo/parser",
+  "version": "0.3.0",
+  "private": true,
+  "main": "src/index.ts",
+  "dependencies": {
+    "ts-morph": "28.0.0"
+  }
+}

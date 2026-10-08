@@ -1,0 +1,6 @@
+{
+  "name": "@follo/search",
+  "version": "0.8.0",
+  "private": true,
+  "main": "src/index.ts"
+}
